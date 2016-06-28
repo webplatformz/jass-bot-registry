@@ -9,13 +9,13 @@ app.use(bodyParser.json());
 let router = express.Router();
 
 router.post('/', (req, res) => {
-    console.log(req.body);
+    //TODO insert bot into db
 
-    let body = req.body;
-    let wsUrl = body.wsUrl;
-    let sessionName = body.sessionName;
+    res.send(200);
+});
 
-    //JassBot.create('fritz', wsUrl, sessionName, teamToJoin);
+router.get('/', (req, res) => {
+    //TODO get all bots
 
     res.send(200);
 });
