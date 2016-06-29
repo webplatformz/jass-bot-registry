@@ -62,10 +62,12 @@ function registerBotToRegistry(bot, wsUrl, callBack) {
             console.log('Response: ' + chunk);
             callBack(200);
         });
-        res.on('error', (chunk) => {
-            console.log('ErrorResponse: ' + chunk);
-            callBack(500);
-        })
+
+    });
+
+    post_req.on('error', (chunk) => {
+        console.log('ErrorResponse: ' + chunk);
+        callBack(500);
     });
 
     post_req.write(JSON.stringify(post_data));
