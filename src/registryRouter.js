@@ -33,4 +33,4 @@ module.exports = function create() {
     });
 
     return router;
-}
+};
