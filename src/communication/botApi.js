@@ -1,9 +1,11 @@
 const http = require('http');
 
 const BotApi = {
-    inviteBotToPlay(bot, wsUrl, callBack) {
+    inviteBotToPlay(bot, wsUrl, mode, sessionName, callBack) {
         const post_data = {
-            wsUrl
+            wsUrl,
+            mode,
+            sessionName
         };
 
         const post_options = {

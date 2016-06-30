@@ -6,9 +6,10 @@
   "engines": {
     "node": ">=6.2"
   },
-
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha  \"test/**/*.js\"",
+    "test:watch": "npm run test -- -w",
+    "prestart": "npm install",
     "start": "node server.js",
     "start:watch": "nodemon -e js --exec \"npm run start\""
   },
@@ -24,6 +25,8 @@
   },
   "homepage": "https://github.com/webplatformz/jass-bot-registry#readme",
   "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "2.5.3",
     "nodemon": "1.9.2"
   },
   "dependencies": {
