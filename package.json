@@ -9,6 +9,7 @@
   "scripts": {
     "test": "mocha  \"test/**/*.js\"",
     "test:watch": "npm run test -- -w",
+    "prestart": "npm install",
     "start": "node server.js",
     "start:watch": "nodemon -e js --exec \"npm run start\""
   },
