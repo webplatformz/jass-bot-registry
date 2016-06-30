@@ -1,1 +1,1 @@
-# jass-bot-registry
+# jass-bot-registry ![Build STatus](https://travis-ci.org/webplatformz/jass-bot-registry.svg?branch=develop)
