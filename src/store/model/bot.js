@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 let botSchema = mongoose.Schema({
-    id: String,
-    owner: String,
-    host: String,
-    port: Number,
-    path: String
+    id: {type: String, required: true, unique: true},
+    owner: {type: String, required: true},
+    host: {type: String, required: true},
+    port: {type: String, required: true},
+    path: {type: String, required: true}
 });
 
 let Bot = mongoose.model('Bot', botSchema);

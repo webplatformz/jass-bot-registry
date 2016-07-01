@@ -15,26 +15,21 @@ function getMongoConnection(callback, errorCallback) {
 const BotStore = {
     addBot(botToAdd) {
         getMongoConnection(() => {
-            Bot.find({
-                id: botToAdd.id,
-                owner: botToAdd.owner},
-                (error, bots) => {
-                    if(bots.length == 0) {
-                        var modelledBot = new Bot(botToAdd);
-                        modelledBot.save();
-                    } else {
-                        console.log("Bot already contained");
-                        // TODO return error
-                    }
-                });
+            let bot = new Bot(botToAdd);
+            bot.save((error) => {
+                if(error) {
+                    throw error;
+                }
+                console.log("Saved successfully!")
+            });
         }, logError)
     },
 
     findBot(botId) {
         getMongoConnection(() => {
             Bot.find({},
-                (error, bots) => {
-                    return bots[0];
+                (error, bot) => {
+                    return bot;
                 });
         }, logError)
     },
