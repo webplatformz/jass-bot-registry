@@ -1,6 +1,7 @@
-let create = require('./src/store/mongoBotStore');
+let BotStore = require('./src/store/mongoBotStore');
 
-var mongoTest = create();
-mongoTest.addBot({id: 'someBot', owner: 'someOwner'});
+//BotStore.addBot({id: 'someBot', owner: 'someOwner2'});
+let bots =BotStore.findBots();
+console.log(bots);
 
 console.log("finished");
